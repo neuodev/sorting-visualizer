@@ -1,0 +1,6 @@
+.bar {
+  background: black;
+  margin: 2.5px;
+  width: 5px;
+  border-top-left-radius: 15px;
+}
