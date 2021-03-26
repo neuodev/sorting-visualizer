@@ -10,4 +10,4 @@ Features: Prev and next buttons to control the steps, custom array sizes, custom
 Applying Heap Sort, Insertion Sort, Selection Sort, Quick Sort, Merge Sort, Bubble Sort  
 
 
-![alt text](https://walletecommerce.herokuapp.com/images/sorting%20visualizer.png)
+![Image](https://walletecommerce.herokuapp.com/images/sorting%20visualizer.png)
