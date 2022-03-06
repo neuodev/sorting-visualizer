@@ -10,4 +10,4 @@ Features: Prev and next buttons to control the steps, custom array sizes, custom
 Applying Heap Sort, Insertion Sort, Selection Sort, Quick Sort, Merge Sort, Bubble Sort  
 
 
-![Image](/public/images/sorting-visualizer.png)
+![Image](/public/images/sorting-visualizer-1.png)
