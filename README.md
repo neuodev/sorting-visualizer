@@ -12,4 +12,4 @@ Applying Heap Sort, Insertion Sort, Selection Sort, Quick Sort, Merge Sort, Bubb
 
 ![Sorting Visalizer](/public/images/sorting-visualizer-1.png)
 
-![Quick Sort](/public/images/sorting-visualizer-1.png)
+![Quick Sort](/public/images/sorting-visualizer-2.png)
