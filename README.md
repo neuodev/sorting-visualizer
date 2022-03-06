@@ -1,4 +1,4 @@
-### Sorting Visualizer 
+# Sorting Visualizer 
 
 
  Program made with React and Material-UI for visualizing sorting algorithms. 
@@ -10,4 +10,6 @@ Features: Prev and next buttons to control the steps, custom array sizes, custom
 Applying Heap Sort, Insertion Sort, Selection Sort, Quick Sort, Merge Sort, Bubble Sort  
 
 
-![Image](/public/images/sorting-visualizer-1.png)
+![Sorting Visalizer](/public/images/sorting-visualizer-1.png)
+
+![Quick Sort](/public/images/sorting-visualizer-1.png)
