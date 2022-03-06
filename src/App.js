@@ -1,21 +1,21 @@
-import './App.css';
-import { IconButton, Slider } from '@material-ui/core';
+import "./App.css";
+import { IconButton, Slider } from "@material-ui/core";
 import {
   PlayArrow,
   Pause,
   SkipPrevious,
   SkipNext,
   RotateLeft,
-} from '@material-ui/icons';
-import bubbleSort from './algorithms/bubbleSort';
-import mergeSort from './algorithms/mergeSort';
-import quickSort from './algorithms/quickSort';
-import selectionSort from './algorithms/selectionSort';
-import { Component } from 'react';
-import Bar from './components/Bar';
-import Form from './components/Form';
-import insertionSort from './algorithms/insertionSort';
-import heapSort from './algorithms/heapSort';
+} from "@material-ui/icons";
+import bubbleSort from "./algorithms/bubbleSort";
+import mergeSort from "./algorithms/mergeSort";
+import quickSort from "./algorithms/quickSort";
+import selectionSort from "./algorithms/selectionSort";
+import { Component } from "react";
+import Bar from "./components/Bar";
+import Form from "./components/Form";
+import insertionSort from "./algorithms/insertionSort";
+import heapSort from "./algorithms/heapSort";
 
 class App extends Component {
   state = {
@@ -25,18 +25,18 @@ class App extends Component {
     colorSteps: [],
     currentStep: 0,
     timeouts: [],
-    algorithm: 'Merge Sort',
+    algorithm: "Merge Sort",
     barCount: 50,
-    delay: 200,
+    delay: 50,
   };
 
   ALGO_SET = {
-    'Bubble Sort': bubbleSort,
-    'Merge Sort': mergeSort,
-    'Quick Sort': quickSort,
-    'Selection Sort': selectionSort,
-    'Insertion Sort': insertionSort,
-    'Heap Sort': heapSort,
+    "Bubble Sort": bubbleSort,
+    "Merge Sort": mergeSort,
+    "Quick Sort": quickSort,
+    "Selection Sort": selectionSort,
+    "Insertion Sort": insertionSort,
+    "Heap Sort": heapSort,
   };
   componentDidMount() {
     this.generateBars();
@@ -100,7 +100,7 @@ class App extends Component {
     });
   };
 
-  changeAlgorithm = event => {
+  changeAlgorithm = (event) => {
     this.setState(
       {
         algorithm: event.target.value,
@@ -117,11 +117,11 @@ class App extends Component {
     this.clearColorKey();
   };
 
-  changeBarCount = barCount => {
+  changeBarCount = (barCount) => {
     this.setState({ barCount: barCount }, () => this.generateBars());
   };
 
-  changeDelay = event => {
+  changeDelay = (event) => {
     this.clearTimeouts();
     this.setState({
       delay: parseInt(event.target.value),
@@ -136,7 +136,7 @@ class App extends Component {
   };
 
   clearTimeouts = () => {
-    this.state.timeouts.forEach(timeout => clearTimeout(timeout));
+    this.state.timeouts.forEach((timeout) => clearTimeout(timeout));
     this.setState({
       timeouts: [],
     });
@@ -189,22 +189,22 @@ class App extends Component {
       );
     } else if (this.state.currentStep === this.state.arraySteps.length) {
       playButton = (
-        <IconButton color='secondary' onClick={() => this.generateBars()}>
+        <IconButton color="secondary" onClick={() => this.generateBars()}>
           <RotateLeft />
         </IconButton>
       );
     } else {
       playButton = (
-        <IconButton color='secondary' onClick={() => this.setTimeouts()}>
+        <IconButton color="secondary" onClick={() => this.setTimeouts()}>
           <PlayArrow />
         </IconButton>
       );
     }
     return (
-      <div className='App'>
-        <section className='bars container barsCard'>{barsDiv}</section>
+      <div className="App">
+        <section className="bars container barsCard">{barsDiv}</section>
 
-        <section className='container-small'>
+        <section className="container-small">
           <IconButton onClick={() => this.generateBars()}>
             <RotateLeft />
           </IconButton>
@@ -217,64 +217,64 @@ class App extends Component {
           </IconButton>
         </section>
 
-        <section className='control-section controls container-smalll'>
-          <div className='grid'>
+        <section className="control-section controls container-smalll">
+          <div className="grid">
             <Form
-              formLabel='Algorithm'
+              formLabel="Algorithm"
               values={[
-                'Bubble Sort',
-                'Merge Sort',
-                'Quick Sort',
-                'Selection Sort',
-                'Insertion Sort',
-                'Heap Sort',
+                "Bubble Sort",
+                "Merge Sort",
+                "Quick Sort",
+                "Selection Sort",
+                "Insertion Sort",
+                "Heap Sort",
               ]}
               labels={[
-                'Bubble Sort',
-                'Merge Sort',
-                'Quick Sort',
-                'Selection Sort',
-                'Insertion Sort',
-                'Heap Sort',
+                "Bubble Sort",
+                "Merge Sort",
+                "Quick Sort",
+                "Selection Sort",
+                "Insertion Sort",
+                "Heap Sort",
               ]}
               currentValue={this.state.algorithm}
               onChange={this.changeAlgorithm}
             />
 
             <Form
-              formLabel='Array size'
+              formLabel="Array size"
               values={[10, 20, 25, 40, 50]}
               labels={[
-                '10 items',
-                '20 items',
-                '25 items',
-                '40 items',
-                '50 items',
+                "10 items",
+                "20 items",
+                "25 items",
+                "40 items",
+                "50 items",
               ]}
               currentValue={this.state.barCount}
-              onChange={e => this.changeBarCount(e.target.value)}
+              onChange={(e) => this.changeBarCount(e.target.value)}
             />
 
             <Form
-              formLabel='Speed'
+              formLabel="Speed"
               values={[200, 100, 50, 25, 10]}
-              labels={['1x', '2x', '4x', '8x', '10x']}
+              labels={["1x", "2x", "4x", "8x", "10x"]}
               currentValue={this.state.delay}
               onChange={this.changeDelay}
             />
           </div>
-          <div className='slider-container'>
-            <div className='sliders card'>
-              <div className=' slider'>
-                <p className='slider-header'>Custom Size Array</p>
+          <div className="slider-container">
+            <div className="sliders card">
+              <div className=" slider">
+                <p className="slider-header">Custom Size Array</p>
                 <Slider
                   value={this.state.barCount}
                   onChange={(e, newValue) => this.handleSizeChange(e, newValue)}
-                  aria-labelledby='input-slider'
+                  aria-labelledby="input-slider"
                 />
               </div>
-              <div className=' slider'>
-                <p className='slider-header'>Custom Speed</p>
+              <div className=" slider">
+                <p className="slider-header">Custom Speed</p>
                 <Slider
                   max={1000}
                   min={100}
@@ -282,7 +282,7 @@ class App extends Component {
                   onChange={(e, newValue) =>
                     this.changeDelayHandler(e, newValue)
                   }
-                  aria-labelledby='input-slider'
+                  aria-labelledby="input-slider"
                 />
               </div>
             </div>
